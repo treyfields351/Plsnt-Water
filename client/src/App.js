@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Routes } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import decode from 'jwt-decode'
 import AuthForm from './components/AuthForm'
@@ -7,7 +7,7 @@ import ShowUserPlants from './components/ShowUserPlants'
 import ShowPlant from './components/ShowPlant'
 import { loginUser, registerUser, showUserPlants, createPlant, destroyPlant, updatePlant } from './services/api-helper'
 import './App.css';
-import HomePage from './components/HomePage';
+import Homepage from './components/HomePage';
 import plants from './images/plants.png'
 
 class App extends Component {
