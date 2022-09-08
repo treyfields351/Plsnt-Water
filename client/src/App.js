@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import decode from 'jwt-decode'
 import AuthForm from './components/AuthForm'
@@ -179,7 +179,7 @@ class App extends Component {
       <div className="App">
         <header className="header">
           <Link to="/">
-            <div className="logo">Plant.ly</div>
+            <div className="logo">Water Me</div>
           </Link>
           {this.state.currentUser
           ?
