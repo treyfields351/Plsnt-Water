@@ -4,8 +4,9 @@ import { withRouter } from 'react-router'
 class PlantWaterStatus extends Component {
     constructor(props) {
         super(props);
+        const now = new Date();
         this.state = {
-            lastWatered: Date.now(),
+            lastWatered: new Date(now.getFullYear(), now.getMonth(), now.getDate() -7),
             lastWateredFormatted: ""
         }
         this.waterPlant = this.waterPlant.bind(this)
@@ -17,7 +18,8 @@ class PlantWaterStatus extends Component {
         //getLastWater(this.props.plant.id)
     }
 
-    waterPLant() {
+    waterPlant() {
+        this.setState({lastWatered: new Date()})
         console.log('watering plant', this.props.plant)
     }
 
