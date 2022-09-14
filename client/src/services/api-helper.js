@@ -1,4 +1,5 @@
-const baseUrl = 'https://boiling-sands-66126.herokuapp.com/'
+const baseUrl = 'https://boiling-sands-66126.herokuapp.com'
+//const baseUrl = 'http://localhost:3000'
 
 export const loginUser = (loginData) => {
   const opts = {
@@ -113,11 +114,11 @@ export const showUserLogs = (plant_id) => {
           'Authorization': `Bearer ${localStorage.getItem('jwt')}`
         }
     }
-    return fetch(`${baseUrl}/plants/:${plant_id}/logs`, opts)
+    return fetch(`${baseUrl}/plants/${plant_id}/logs`, opts)
     .then(resp => resp.json())
 }
 
 export const showPlantLog = (plant_id, id) => {
-    return fetch(`${baseUrl}/plants/:${plant_id}/logs/:${id}`)
+    return fetch(`${baseUrl}/plants/${plant_id}/logs/${id}`)
     .then(resp => resp.json())
 }

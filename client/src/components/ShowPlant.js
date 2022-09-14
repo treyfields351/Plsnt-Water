@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import Modal from './Modal'
 import avatar from '../images/plant_avatar.png'
+import PlantWaterStatus from './PlantWaterStatus'
 
 class ShowPlant extends Component {
 	constructor(props) {
@@ -79,11 +80,14 @@ class ShowPlant extends Component {
 										<button className="update-plant-submit">Submit</button>
 								</form>
 								:
+								<div>
 								<button className="update-button" onClick={() => {
-										this.props.setUpdateForm(this.props.plant)
-										this.setState({ isEdit: this.props.plant.id })
-								}}>Update Plant</button>
-								
+									this.props.setUpdateForm(this.props.plant)
+									this.setState({ isEdit: this.props.plant.id })
+							}}>Update Plant
+								</button>
+								<PlantWaterStatus plant={this.props.plant}/>
+								</div>
 						}
 						<div className="delete-plant-div">
 							<button onClick={this.showModal} className="open-modal-button">Delete Plant</button>

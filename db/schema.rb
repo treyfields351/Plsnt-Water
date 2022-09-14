@@ -11,15 +11,12 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_09_08_030324) do
- 
-  enable_extension "plpgsql"
-
   create_table "logs", force: :cascade do |t|
     t.date "log_date"
     t.string "cared_for"
     t.string "condition"
     t.string "description"
-    t.bigint "plant_id"
+    t.integer "plant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["plant_id"], name: "index_logs_on_plant_id"
@@ -33,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_030324) do
     t.string "water"
     t.string "humidity"
     t.string "image"
-    t.bigint "user_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_plants_on_user_id"
